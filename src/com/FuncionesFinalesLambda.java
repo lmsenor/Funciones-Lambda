@@ -170,19 +170,19 @@ public class FuncionesFinalesLambda {
 	}
 	
 	public void paths_lines() {
-		/////////////////////////////////////////		LINE		////////////////////////////
-			//	MÉTODOS EN FILES: Devuelve un Stream con las lineas del fichero
-			System.out.println("\n*************************************************************");
-			System.out.println("método .lines()");
+	/////////////////////////////////////////		LINE		////////////////////////////
+		//	MÉTODOS EN FILES: Devuelve un Stream con las lineas del fichero
+		System.out.println("\n*************************************************************");
+		System.out.println("método .lines()");
 			
-			Path pt=Paths.get("datos.txt");
-			try {
-				Stream<String> linea = Files.lines(pt);
-				linea.forEach(l->System.out.println(l));
+		Path pt=Paths.get("datos.txt");
+		try {
+			Stream<String> linea = Files.lines(pt);
+			linea.forEach(l->System.out.println(l));
 				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+	}
 	
 }
