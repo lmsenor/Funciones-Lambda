@@ -175,11 +175,18 @@ public class FuncionesFinalesLambda {
 		System.out.println("\n*************************************************************");
 		System.out.println("método .lines()");
 			
+		Contacto[] contactos=null;
 		Path pt=Paths.get("datos.txt");
-		try {
-			Stream<String> linea = Files.lines(pt);
-			linea.forEach(l->System.out.println(l));
-				
+		try(Stream<String> st=Files.lines(pt)){		//lee el archivo y lo guardamos en Streams
+			// con .split() transformamos las cadenas de caracteres en arrays de cadena de caracteres, 
+			// con .map() transformamos cada elemento del stream (que es un array) en un objeto contacto
+			// con .toArray() lo convertimos en un array
+			contactos=st.map(s->s.split("[|]"))
+					.map(d->new Contacto(d[0], d[2], Integer.parseInt(d[1])))
+					.toArray(t->new Contacto[t]);
+			for(Contacto con:contactos) {
+				System.out.println(con.getNombre() +"-" +con.getEdad() +"-"+con.getEmail());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

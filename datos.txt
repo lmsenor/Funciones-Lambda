@@ -1,3 +1,2 @@
-Datos de prueba
-nombre:Juan|edad:30|email:juan@gmail.com
-nombre:Maria|edad:52|email:maria@gmail.com
+Juan|30|juan@gmail.com
+Maria|52|maria@gmail.com
